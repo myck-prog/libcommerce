@@ -102,7 +102,6 @@ li{
     background-color: transparent;
     border: none;
     font-size: 40px;
-    text-align: center;
     color: #DA4167;
     display: none;
 }
@@ -124,20 +123,24 @@ li{
     opacity: 0;
     visibility: hidden;
     transition: all 300ms ease;
-
+    transform: translate(100%);
 }
+
+
 .menu--open .menu__backdrop{
     /* ini lanjutan display none. so we can use transition in backdrop. kalo ga pake df nanti in */
     visibility: visible;
     opacity: 1;
+    transform: translate(0);
     /* when menu open ada, menu backdrop changes */
-    
 }
+
 .menu--open{
     max-height: 100vh;
     overflow-y: hidden;
     /* can't scroll while menu open  */
 }
+
 .menu__links{
     display: flex;
     flex-direction: column;
@@ -172,7 +175,7 @@ header{
     max-width: 720px;
     margin: 0 auto;
     /* margin: 0 auto ngepasin ditengah by width page trus ditengah2 */
-    align-items: center;
+    /* align-items: center; */
     /* align ini ingikut max-width header__container*/
     height: 100%;
     display: flex;
@@ -211,7 +214,7 @@ button:active{
 }
 .header__img--wrapper{
     padding: 20px;
-    z-index: 2;
+    z-index: 50;
 }
 
 .container{
@@ -229,6 +232,7 @@ display: flex;
 flex-direction: column;
 align-items: center;
 }
+
 .no-cursor{
     cursor: not-allowed;
 }
@@ -236,6 +240,7 @@ align-items: center;
 
 #highlights{
     position: relative;
+    max-width: 100vw;
 
 }
 #highlights:after,
@@ -255,7 +260,7 @@ align-items: center;
 #highlights:before {
     transform: translateY(-100%);
     /* push up by berapa  */
-    top: 1;
+    top: 1px;
   }
 #highlights::after {
     transform: translateY(100%) rotate(180deg);
@@ -273,6 +278,7 @@ align-items: center;
     padding: 0 24px;
     width: calc(100%/3);  
     align-items: center;
+    
     
 }
 .highlight__para {
@@ -300,7 +306,6 @@ align-items: center;
 }
 /* FEATURES */
 #features{
-    height: 1000px;
     padding-top: 8vw;
     background-color: #f0bcd47a
 }
@@ -389,7 +394,7 @@ footer{
     button{
         font-size: 18px;
     }
-    book{
+    .book{
         width: 50%;
     }
     .nav__links{
@@ -402,12 +407,13 @@ footer{
 
 /* SMALL PHONES, LARGE SMARTPHONES */
 @media (max-width: 550px){
-    .nav__links{
-        display: none;
-    }
     .btn__menu{
         display: block;
     }
+    .nav__links{
+        display: none;
+    }
+    
     .highlight{
       width: 100%  ;
     }
